@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: rgb(237, 235, 242);
+    }
+
+    input[type=text] {
+      width: 70%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 3px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+    }
+
+    input[type=text]:focus {
+      border: 3px solid #555;
+    }
+
+    .message-box {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .message-box h2 {
+      color: #333;
+    }
+
+    .message-box p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+
+    .range-container {
+      margin-top: 10px;
+    }
+
+    .text_adjust {
+      font-size: 17px;
+    }
+
+    .input-container {
+      width: 100%;
+    }
+
+    .btn-submit {
+      background-color: #4CAF50;
+      display: flex;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 4px;
+      text-align: center;
+      margin-left: 20px;
+      margin-top: 20px;
+      /* cursor: pointer; */
+      /* width: 100%; */
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="input-container">
+    <label for="userInput" class="text_adjust">Enter something: </label>
+    <input type="text" id="userInput" class="user-input" placeholder="Type here...">
+    <button class="btn-submit" onclick="wifi_ssid1()">Submit</button>
+  </div>
+
+  <script>
+    var xhttp = new XMLHttpRequest();
+
+    function wifi_ssid1() {
+      var userInput = document.getElementById("userInput").value;
+      xhttp.open("GET", "/wifi_ssid?ssid=" + userInput);
+      xhttp.send();
+    }
+  </script>
+</body>
+
+</html>
